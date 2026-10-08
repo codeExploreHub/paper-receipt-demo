@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="用原生 JavaScript 和 WebGL 实现分段打印、纸张卷曲与渐进撕裂的小票交互演示。">
+  <meta name="color-scheme" content="light dark">
+  <title>Paper Receipt Demo · 打印与手撕小票</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <main>
+    <div id="receipt-paper-demo">
+  <section class="rp-window" aria-label="卷纸与渐进撕纸演示">
+    <header class="rp-header"><div><b>PAPER</b><span>用量小票</span></div><span>示例数据</span></header>
+    <div class="rp-stage">
+      <div class="rp-printer" aria-hidden="true"><span>THERMAL / 02</span><i></i><div class="rp-slot"></div></div>
+      <div class="rp-empty"><span>今日 AI 用量</span><strong>$3.20</strong><span>长纸卷曲 · 一点点撕开</span></div>
+      <div class="rp-output"><div class="rp-stub" aria-hidden="true"></div><canvas class="rp-paper" role="img" aria-label="长小票，末端向上卷曲；按住纸张向左下方轻拉，裂口会逐渐扩大。示例总额 3.20 美元。">示例 AI 用量小票，总额 3.20 美元。可用下方“撕开一点”按钮渐进撕纸。</canvas></div>
+    </div>
+    <footer class="rp-footer"><div class="rp-status" role="status" aria-live="polite">准备就绪 · 点击打印长小票</div><div class="rp-actions"><button type="button" class="rp-print">打印长小票</button><button type="button" class="rp-tear" disabled>撕开一点</button><button type="button" class="rp-sound" aria-pressed="true" aria-label="切换合成音效">音效：开</button></div></footer>
+  </section>
+</div>
+  </main>
+  <noscript>请启用 JavaScript，以体验打印、卷纸和渐进撕纸动画。</noscript>
+</body>
+</html>

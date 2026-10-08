@@ -1,0 +1,35 @@
+/* Independent page shell; no host styles or remote resources are required. */
+:root { color-scheme: light dark; background: light-dark(#f6f8f3, #19221d); }
+html, body { margin: 0; }
+body { padding: 24px 16px; font-family: "Segoe UI", "Microsoft YaHei", sans-serif; line-height: 1.5; }
+main { max-width: 736px; margin: 0 auto; }
+button { cursor: pointer; }
+button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+[hidden] { display: none !important; }
+@media (max-width: 380px) { body { padding: 12px 8px; } }
+#receipt-paper-demo{padding:14px 0;color-scheme:light dark;font-family:"Segoe UI","Microsoft YaHei",sans-serif;--rp-surface:light-dark(#e9eee9,#252d2b);--rp-ink:light-dark(#273d33,#e4eae4);--rp-muted:light-dark(#596d60,#bac8bd);--rp-line:light-dark(#c9d5cb,#46564a);--rp-printer:light-dark(#e1e6dd,#4a514a);--rp-machine-text:light-dark(#647366,#d3dcd1);--rp-slot:light-dark(#233229,#101b15);--rp-shadow:light-dark(#1e342522,#00000050);--rp-paper:light-dark(#fff9e9,#e6dfce);--rp-paper-ink:light-dark(#363e31,#293126);--rp-paper-muted:light-dark(#65705c,#54604b);--rp-button:light-dark(#304c39,#c9ddc7);--rp-button-text:light-dark(#f1f7eb,#24382b);--rp-led:light-dark(#6d9862,#a7d18a)}
+#receipt-paper-demo *{box-sizing:border-box}
+#receipt-paper-demo .rp-window{max-width:580px;margin:auto;border:1px solid var(--rp-line);border-radius:18px;overflow:hidden;background:var(--rp-surface);color:var(--rp-ink)}
+#receipt-paper-demo .rp-header{padding:20px 22px 15px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rp-line);gap:12px;font-size:12px;color:var(--rp-muted)}
+#receipt-paper-demo .rp-header b{font-size:13px;letter-spacing:3px;margin-right:16px;color:var(--rp-ink)}
+#receipt-paper-demo .rp-stage{position:relative;height:582px;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 50% 50%,color-mix(in srgb,var(--rp-surface) 88%,var(--rp-led)),var(--rp-surface) 75%)}
+#receipt-paper-demo .rp-printer{position:absolute;top:22px;left:50%;transform:translateX(-50%);width:min(354px,calc(100% - 28px));height:70px;border-radius:14px 14px 11px 11px;background:linear-gradient(var(--rp-printer),color-mix(in srgb,var(--rp-printer) 90%,var(--rp-slot)));box-shadow:0 7px 16px var(--rp-shadow),inset 0 1px 0 color-mix(in srgb,var(--rp-printer) 50%,var(--rp-paper));z-index:3}
+#receipt-paper-demo .rp-printer span{position:absolute;left:24px;top:18px;font-family:Consolas,monospace;font-size:10px;letter-spacing:1.4px;color:var(--rp-machine-text)}
+#receipt-paper-demo .rp-printer i{position:absolute;right:25px;top:20px;width:6px;height:6px;border-radius:50%;background:var(--rp-led);box-shadow:0 0 6px color-mix(in srgb,var(--rp-led) 50%,transparent)}
+#receipt-paper-demo .rp-slot{position:absolute;left:24px;right:24px;bottom:9px;height:8px;border-radius:8px;background:var(--rp-slot);box-shadow:0 1px 0 var(--rp-machine-text)}
+#receipt-paper-demo .rp-empty{position:absolute;top:215px;left:0;right:0;display:grid;justify-items:center;gap:14px;color:var(--rp-muted);font-size:12px}
+#receipt-paper-demo .rp-empty strong{font-family:Consolas,monospace;font-size:40px;font-weight:400;letter-spacing:-2px;color:var(--rp-ink)}
+#receipt-paper-demo .rp-output{position:absolute;top:79px;left:0;width:100%;height:503px;overflow:hidden;z-index:2}
+#receipt-paper-demo .rp-paper{display:block;width:100%;height:100%;touch-action:none;user-select:none;filter:drop-shadow(0 8px 8px var(--rp-shadow))}
+#receipt-paper-demo .rp-stub{position:absolute;top:0;left:50%;height:28px;background:var(--rp-paper);transform:translateX(-50%);display:none}
+#receipt-paper-demo .rp-footer{padding:13px 20px 18px;border-top:1px solid var(--rp-line)}
+#receipt-paper-demo .rp-status{font-size:12px;color:var(--rp-muted);min-height:19px;margin-bottom:9px}
+#receipt-paper-demo .rp-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+#receipt-paper-demo button{font-family:inherit;font-size:12px;min-height:36px;padding:8px 13px;border-radius:7px;border:1px solid var(--rp-line);background:var(--rp-surface);color:var(--rp-ink)}
+#receipt-paper-demo button.rp-print{background:var(--rp-button);color:var(--rp-button-text);border-color:var(--rp-button)}
+#receipt-paper-demo button.rp-sound{margin-left:auto;border-color:transparent;color:var(--rp-muted)}
+#receipt-paper-demo button:disabled{opacity:.45;cursor:default}
+#receipt-paper-demo[data-state="dragging"] .rp-paper{cursor:grabbing}
+#receipt-paper-demo[data-state="ready"] .rp-paper{cursor:grab}
+@media(pointer:coarse){#receipt-paper-demo button{min-height:44px}}
+@media(max-width:380px){#receipt-paper-demo .rp-header{padding:16px}#receipt-paper-demo .rp-header b{margin-right:10px}#receipt-paper-demo .rp-footer{padding:13px 12px 16px}#receipt-paper-demo button{padding-left:10px;padding-right:10px}}
